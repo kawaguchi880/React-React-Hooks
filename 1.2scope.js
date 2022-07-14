@@ -10,3 +10,6 @@ const sampleFunc = () => {
 sampleFunc();
 
 console.log(global);
+
+a = 3 ** 3;
+console.log(a);
