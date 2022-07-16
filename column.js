@@ -10,7 +10,7 @@ const ex2 = 0;
 ex1 ?? ex2
 //ex1がnullかundifine
 
-const sampleFunc = (a, b, ...rest) => {
+export const sampleFunc = (a, b, ...rest) => {
   console.log(rest);
 }
 
@@ -55,4 +55,95 @@ console.log(newArray);
 const array1 = newArray.join('/');
 
 console.log(array1);
+const sampleNumberArray = [2, 4, 6, 8,];
 
+//Foreachについて 
+// 第一引数はfor文のように配列の中身を一つずつ吐き出す．
+// 第二引数はindex
+// 第三引数は配列全てを文字列として出力する．
+sampleNumberArray.forEach((value, index, array) => {
+  console.log(`value:${value},index:${index},array:${array}`)
+})
+
+// map()について
+// 使い方の一つとして，配列をもとに別の配列を作成する．
+// 非破壊的メソッドなので使いやすい．
+const sample1NumberArray = sampleNumberArray.map((value) => {
+  return value * value;
+})
+// .filter()について
+// これも既存の配列をもとに新しい配列を作る際に便利．
+const sample2NumberArray = sampleNumberArray.filter((value) => {
+  return value > 5;
+})
+console.log(sample2NumberArray);
+// .find()は条件に合うものだけを出力．
+// 組み合わせ
+// 組み合わせた順に実行される．
+// 条件に当てはまらない場合-1を返す．
+const sample3NumberArray = sampleNumberArray.map(value => value + 10).filter(value => value < 15)
+const sample4NumberArray = sampleNumberArray.filter(value => value < 15).map(value => value + 10)
+console.log(sample3NumberArray);
+console.log(sample4NumberArray);
+
+const sampleObject1 = {
+  name: "js",
+  age: 7,
+};
+// ドット記法
+console.log(sampleObject1.name);
+// ブラケット記法
+console.log(sampleObject1['name']);
+const birthplace = "japan";
+
+console.log(sampleObject1[birthplace]);
+
+const obj1 = {
+  a: 10,
+  b: 20
+}
+
+const obj2 = {
+  c: 30,
+  d: 40,
+  a: 400
+}
+
+const obj3 = {
+  ...obj1, ...obj2
+}
+
+console.log(obj3);
+// オブジェクトのkey要素のみを取り出す．
+const keys = Object.keys(obj3);
+console.log(keys);
+
+// オブジェクトを配列に！
+const arr = Object.entries(obj3);
+console.log(arr);
+
+// 複数のオブジェクトを要素に持つ配列
+const posts = [
+  {
+    id: 1,
+    content: 'js1',
+    likes: 2
+  },
+  {
+    id: 2,
+    content: 'js2',
+    likes: 3,
+  },
+  {
+    id: 3,
+    content: 'js3',
+    likes: 500,
+  }
+]
+
+// forでの要素取り出し
+for (let i = 0; i < posts.length; i++) {
+  console.log(`タイトル:${posts[i].content}  ${posts[i].likes}`)
+}
+
+// foreachでの
