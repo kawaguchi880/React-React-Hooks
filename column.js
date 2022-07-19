@@ -1,3 +1,4 @@
+
 // 値(a)がnull or undifinedを判別
 const a = 0;
 if (a == undefined) {
@@ -9,12 +10,13 @@ const ex2 = 0;
 // nullかundifineの時のみだけ値を返す．
 ex1 ?? ex2
 //ex1がnullかundifine
-
 export const sampleFunc = (a, b, ...rest) => {
   console.log(rest);
 }
 
+
 sampleFunc(1, 2, 3, 4, 5, 6, 7);
+
 
 const sampleObject = {
   a: 'aiueo',
@@ -73,6 +75,7 @@ const sample1NumberArray = sampleNumberArray.map((value) => {
 })
 // .filter()について
 // これも既存の配列をもとに新しい配列を作る際に便利．
+console.log("\nfilter関数")
 const sample2NumberArray = sampleNumberArray.filter((value) => {
   return value > 5;
 })
@@ -91,11 +94,13 @@ const sampleObject1 = {
   age: 7,
 };
 // ドット記法
+console.log("\nドット記法");
 console.log(sampleObject1.name);
-// ブラケット記法
+console.log("ブラケット記法");
 console.log(sampleObject1['name']);
-const birthplace = "japan";
 
+//よくわからないところ
+const birthplace = "japan";
 console.log(sampleObject1[birthplace]);
 
 const obj1 = {
@@ -112,13 +117,15 @@ const obj2 = {
 const obj3 = {
   ...obj1, ...obj2
 }
-
+console.log("\nスプレッド構文でオブジェクトを合わせて表示");
 console.log(obj3);
 // オブジェクトのkey要素のみを取り出す．
+console.log("keyのみを表示");
 const keys = Object.keys(obj3);
 console.log(keys);
 
 // オブジェクトを配列に！
+console.log("配列にして表示");
 const arr = Object.entries(obj3);
 console.log(arr);
 
@@ -142,8 +149,21 @@ const posts = [
 ]
 
 // forでの要素取り出し
+console.log("\nforでの要素取り出し");
 for (let i = 0; i < posts.length; i++) {
   console.log(`タイトル:${posts[i].content}  ${posts[i].likes}`)
 }
 
-// foreachでの
+// foreachでの取り出し
+console.log("\nforeachでの取り出し");
+posts.forEach((post) => {
+  return console.log(`タイトル${post.content} ${post.likes}いいね！`)
+})
+
+// mapで新しい配列を作成してからそれを表示
+console.log("\nmapで新配列を表示")
+const objMap = posts.map((post) => {
+  return `タイトル：${post.content} ${post.likes}いいね！`
+})
+console.log(objMap);
+

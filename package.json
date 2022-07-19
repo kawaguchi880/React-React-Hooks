@@ -5,6 +5,7 @@
   "main": "column.js",
   "type": "module",
   "scripts": {
+    "start": "reload -b",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/kawaguchi880/React-React-Hooks/issues"
   },
-  "homepage": "https://github.com/kawaguchi880/React-React-Hooks#readme"
+  "homepage": "https://github.com/kawaguchi880/React-React-Hooks#readme",
+  "devDependencies": {
+    "reload": "^3.2.0"
+  }
 }

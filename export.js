@@ -1,3 +1,3 @@
 import { sampleFunc } from "./column.js";
-// console.log(sampleFunc);
 console.log("a");
+// sampleFunc(1, 4, 6, 1, 3, 9);
