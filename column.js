@@ -10,7 +10,7 @@ const ex2 = 0;
 // nullかundifineの時のみだけ値を返す．
 ex1 ?? ex2
 //ex1がnullかundifine
-export const sampleFunc = (a, b, ...rest) => {
+const sampleFunc = (a, b, ...rest) => {
   console.log(rest);
 }
 
@@ -167,3 +167,52 @@ const objMap = posts.map((post) => {
 })
 console.log(objMap);
 
+// 非同期処理
+// setTimeout(何かしらの関数,時間(ms));
+// ここで何かしらの関数はコールバック関数という。s
+const callbackFunc = () => {
+  console.log(`処理が実行されました！`)
+}
+
+setTimeout(callbackFunc, 500)
+
+// promiseオブジェクトについて
+// const statements = (resolve, reject) => {
+//   // resolve() 成功を通知する関数
+//   // reject()  失敗を通知する関数 
+// }
+// // promiseのインスタンスを作成
+// const promise = new Promise(statements)
+
+const promise = new Promise((resolve, reject) => {
+  resolve()
+})
+
+const incaseOfSuccess = () => {
+  console.log("非同期処理成功&resolveの通知!!")
+}
+const incaseOfFailure = () => {
+  console.log("非同期処理失敗&rejectの通知...")
+}
+// resolve()で成功したかどうかを受け取る。
+promise.then(incaseOfSuccess, incaseOfFailure);
+
+const asyncsampleFunc = async () => {
+  let x, y;
+  x = await new Promise(resolve => {
+    setTimeout(() => {
+      resolve(1);
+    }, 1000)
+  })
+
+  y = await new Promise(resolve => {
+    setTimeout(() => {
+      resolve(1);
+    }, 1000)
+  })
+  console.log(x + y)
+}
+asyncsampleFunc();
+const sampleFunc1 = async () => {
+  return "非同期関数です"
+}
