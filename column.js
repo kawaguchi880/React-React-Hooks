@@ -218,3 +218,4 @@ const sampleFunc1 = async () => {
 }
 
 a=1;
+b-2;
