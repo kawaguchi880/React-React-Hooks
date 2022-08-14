@@ -215,6 +215,7 @@ const asyncsampleFunc = async () => {
 asyncsampleFunc();
 const sampleFunc1 = async () => {
   return "非同期関数です"
+  
 }
 
 a=1;
