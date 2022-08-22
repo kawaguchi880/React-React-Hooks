@@ -212,7 +212,6 @@ const asyncsampleFunc = async () => {
   })
   console.log(x + y)
 }
-
 asyncsampleFunc();
 const sampleFunc1 = async () => {
   return "非同期関数です"
